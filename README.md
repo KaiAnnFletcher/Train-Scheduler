@@ -1,2 +1,1 @@
-# Train-Scheduler
-Lesson 07 Assignment 
+Add the names of trains and their times to the scheduler. Simply fill out the form by inputting the required information and that's it. The calculations are already accounted for using the moment.js.

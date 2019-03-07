@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <!--link to CSS reset file-->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!--link to CSS file-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <!--link to bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--link to jQuery-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!--link to momemt.js-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <title>Train Schedule</title>
+</head>
+
+<body>
+    <!--First step is to create the skeleton of the web page that contains the schedule and includes all bootstrap divs
+with relevent headers and text-->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="card" style="height: 20rem">
+                    <h1 class="card-header text-center">Current Train Schedule!</h1>
+                    <div class="card-body text-center">
+                    <div class="row">
+                    <div class="col-sm" id="train-name">
+                        <h4>Train Name</h4>
+                    </div>
+                    <div class="col-sm" id="destination">
+                        <h4>Destination</h4>
+                    </div>
+                    <div class="col-sm" id="frequency">
+                        <h4>Frequency (min)</h4>
+                    </div>
+                    <div class="col-sm" id="next-arrival">
+                        <h4>Next Arrival</h4>
+                    </div>
+                    <div class="col-sm" id="minutes-away">
+                        <h4>Minutes Away</h4>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                 <div class="card">
+                    <h1 class="card-header text-center">Add Train</h1>
+                    <div class="card-body">
+                        <form>
+                        Train Name:<br><br>
+                        <input type="text" name="train-name" id="form-train-name" size="35"><br><br>
+                        Destination:<br><br>
+                        <input type="text" name="destination" id="form-destination" size="35"><br><br>
+                        First Train Time (HH:mm-military time):<br><br>
+                        <input type="text" name="first-train-time" id="form-first-train-time" size="35"><br><br>
+                        Frequency:<br><br>
+                        <input type="text" name="frequency" id="form-frequency" size="35"><br><br>
+                        <input type="submit" value="Submit" id="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./assets/javascript/app.js"></script>
+    </body>
+
+</html>
