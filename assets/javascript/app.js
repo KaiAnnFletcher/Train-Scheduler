@@ -12,8 +12,7 @@
 
   var dataRef = firebase.database();
 
-/*Declare all variables that need to be 
-added to div sections dynamically*/ 
+/*Moment notes*/ 
 var trainFrequency = 5;
 
 var firstTime = "1:00";
@@ -69,6 +68,22 @@ dataRef.ref().push({
 
 // Firebase watcher + initial loader HINT: .on("value")
 dataRef.ref().on("child_added", function(snapshot) {
+//Redefine moment values so that they can be dynamic
+var firstTimeConverted = moment(snapshot.val().formFirstTrain, "HH:mm").subtract(1, "years");
+console.log('firstTimeConverted', firstTimeConverted);
+
+var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+console.log("DIFFERENCE IN TIME: " + diffTime);
+
+var timeRemainder = diffTime % snapshot.val().formFrequency;
+console.log(timeRemainder);
+
+var minutesTillTrain = snapshot.val().formFrequency - timeRemainder;
+console.log("MINUTES TILL TRAIN: " + minutesTillTrain);
+
+var nextTrain = moment().add(minutesTillTrain, "minutes");
+console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+
 // Log everything that's coming out of snapshot
 
     console.log(snapshot.val());
